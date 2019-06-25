@@ -56,15 +56,15 @@ function targeting(entries, observer) {
     let entry = entries[0];
     let elem = entry.target;
     if (entry.intersectionRatio > observer.thresholds[0] && config.characterAnim === 0) {
-            document.addEventListener('mousemove', onDocumentMouseMove, false);
-            config.characterAnim = 1;
-            animations[1].play();
-            animate();
-     } else if (entry.intersectionRatio < observer.thresholds[0]) {
-             config.characterAnim = 0;
-             animations[0].stop();
-             document.removeEventListener('mousemove', onDocumentMouseMove);
-     }
+        document.addEventListener('mousemove', onDocumentMouseMove, false);
+        config.characterAnim = 1;
+        animations[1].play();
+        animate();
+    } else if (entry.intersectionRatio < observer.thresholds[0]) {
+        config.characterAnim = 0;
+        animations[0].stop();
+        document.removeEventListener('mousemove', onDocumentMouseMove);
+    }
 }
 
 observer.observe(document.querySelector('.hero'));

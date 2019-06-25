@@ -109,7 +109,7 @@ function backgroundTranslate() {
 }
 backgroundTranslate()
 
-function backgroundScrolling(){
+function backgroundScrolling() {
     let k = (fss.renderer.element.clientHeight - (fss.renderer.element.clientHeight * 0.2) - (0.2 * fss.renderer.element.clientHeight)) / (document.querySelector('body').clientHeight + window.innerHeight);
     let s = document.querySelector('html').scrollTop;
     let y = 0.1 * fss.renderer.element.clientHeight + s * k;

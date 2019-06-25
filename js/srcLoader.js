@@ -36,33 +36,33 @@ renderer.shadowMapSoft = true;
 let loader = new THREE.GLTFLoader();
 (() => {
     loader.load('src/3d/hero5.glb', (gltf) => {
-            //Dodanie sceny
-            scene.add(gltf.scene);
-            scene.mouse = new THREE.Vector3();
-            scene.mouse.z = 30
-            initScene();
-            //lights
-            scene.add(ambientLight);
-            let light = new THREE.PointLight(0xffffff, 3, 100);
-            light.position.set(40, 40, 40);
-            scene.add(light);
-            lights.push(light);
-            let light2 = new THREE.PointLight(0xffffff, 1, 100);
-            light2.position.set(-10, 20, 40);
-            scene.add(light2);
-            lights.push(light2);
-            mixer = new THREE.AnimationMixer(scene);
-            gltf.animations.forEach((clip) => {
-                mixer.clipAction(clip).play();
-            });
-            mixer._actions.map((item)=>{
-                animations[item._clip.name] = item;
-            })
-            animations['breath'].fadeOut(0.01)
-            animations['waving2'].fadeOut(0.01)
-            human.position.set(0, 0, -40)
-            plane.rotation.set(camera.rotation.x, camera.rotation.y, camera.rotation.z)
-            loaded();
+        //Dodanie sceny
+        scene.add(gltf.scene);
+        scene.mouse = new THREE.Vector3();
+        scene.mouse.z = 30
+        initScene();
+        //lights
+        scene.add(ambientLight);
+        let light = new THREE.PointLight(0xffffff, 3, 100);
+        light.position.set(40, 40, 40);
+        scene.add(light);
+        lights.push(light);
+        let light2 = new THREE.PointLight(0xffffff, 1, 100);
+        light2.position.set(-10, 20, 40);
+        scene.add(light2);
+        lights.push(light2);
+        mixer = new THREE.AnimationMixer(scene);
+        gltf.animations.forEach((clip) => {
+            mixer.clipAction(clip).play();
+        });
+        mixer._actions.map((item) => {
+            animations[item._clip.name] = item;
+        })
+        animations['breath'].fadeOut(0.01)
+        animations['waving2'].fadeOut(0.01)
+        human.position.set(0, 0, -40)
+        plane.rotation.set(camera.rotation.x, camera.rotation.y, camera.rotation.z)
+        loaded();
     })
 })()
 

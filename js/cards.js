@@ -10,6 +10,7 @@ if (config.mobile === 0) {
         })
     })
 }
+
 function cardHover(e) {
     let card = e.target;
     if (!card.classList.contains('card')) {
@@ -20,10 +21,12 @@ function cardHover(e) {
             return 0
         }
     }
-    requestAnimationFrame(()=>{cardAnim([card,e])})
+    requestAnimationFrame(() => {
+        cardAnim([card, e])
+    })
 }
 
-function cardAnim(inp){
+function cardAnim(inp) {
     const [card, e] = [...inp];
     const bodyRect = document.body.getBoundingClientRect();
     const cords = card.getBoundingClientRect();
