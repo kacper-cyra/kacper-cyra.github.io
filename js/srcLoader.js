@@ -154,7 +154,7 @@ function startMoving() {
     } else {
         animations['waving2'].enabled = 1;
         animations['waving2'].fadeIn(0.7);
-        animations['walk'].fadeOut(0.35);
+        animations['walk'].fadeOut(0.7);
     };
 
     function startBreathing() {

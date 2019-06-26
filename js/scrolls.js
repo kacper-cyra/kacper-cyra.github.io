@@ -36,11 +36,10 @@ function menu() {
     b.forEach(i => {
         let c = i.getClientRects()[0];
         if (c.y >= 0 && c.y <= 200) {
-            let x = i.getAttribute('id');
+            let x = i.getAttribute('data-section');
             let w = document.querySelector(`.menu-full [href='#${x}']`);
             if (!w.classList.contains('active')) {
-                document.querySelector('.menu-full .active').classList.remove('active');
-                w.classList.add('active');
+                document.querySelector('.menu-full .active').classList.remove('active');                w.classList.add('active');
             }
         }
     })
@@ -58,11 +57,11 @@ function targeting(entries, observer) {
     if (entry.intersectionRatio > observer.thresholds[0] && config.characterAnim === 0) {
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         config.characterAnim = 1;
-        animations[1].play();
+        animations['breath'].play();
         animate();
     } else if (entry.intersectionRatio < observer.thresholds[0]) {
         config.characterAnim = 0;
-        animations[0].stop();
+        animations['breath'].stop();
         document.removeEventListener('mousemove', onDocumentMouseMove);
     }
 }
