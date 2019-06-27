@@ -140,8 +140,9 @@ function onDocumentMouseMove(e) {
     canMouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
 }
 
+let end = window.innerWidth < 1000 ? 20 : 6;
 function startMoving() {
-    if (human.position.z < 6) {
+    if (human.position.z < end) {
         human.position.z += human.direction.z * 0.9;
         human.position.y += human.direction.y * 0.9;
         human.position.x += human.direction.x * 0.9;
@@ -149,7 +150,7 @@ function startMoving() {
     } else {
         startBreathing()
     };
-    if (human.position.z < -5) {
+    if (human.position.z < (end-11)) {
         human.rotation.set(0, -0.75, 0)
     } else {
         animations['waving2'].enabled = 1;
