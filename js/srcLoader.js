@@ -35,7 +35,7 @@ renderer.shadowMapSoft = true;
 
 let loader = new THREE.GLTFLoader();
 (() => {
-    loader.load('src/3d/hero5.glb', (gltf) => {
+    loader.load('src/3d/hero6.glb', (gltf) => {
         //Dodanie sceny
         scene.add(gltf.scene);
         scene.mouse = new THREE.Vector3();
