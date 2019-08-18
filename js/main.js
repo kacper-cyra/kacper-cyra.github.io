@@ -35,8 +35,10 @@ function loaded() {
     a.addEventListener('transitionend', () => {
         a.classList.add('invisible');
         body.classList.remove('no-scroll');
+        if(config.characterAnim === 1 ){
         animate();
         startMoving()
+        }
     })
     requestAnimationFrame(() => {
         document.querySelector('.line ._1').style.height = (document.querySelector('.hero').clientHeight - document.querySelector('.message').offsetTop + (document.querySelector('.message').clientHeight / 2)) - cir + 'px';

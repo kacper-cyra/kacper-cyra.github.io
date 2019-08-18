@@ -54,6 +54,7 @@ let observer = new IntersectionObserver(targeting, {
 function targeting(entries, observer) {
     let entry = entries[0];
     let elem = entry.target;
+    if(config.mobile === 0 ){
     if (entry.intersectionRatio > observer.thresholds[0] && config.characterAnim === 0) {
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         config.characterAnim = 1;
@@ -64,6 +65,7 @@ function targeting(entries, observer) {
         animations['breath'].stop();
         document.removeEventListener('mousemove', onDocumentMouseMove);
     }
+}
 }
 
 observer.observe(document.querySelector('.hero'));

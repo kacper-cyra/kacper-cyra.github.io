@@ -67,7 +67,7 @@ let loader = new THREE.GLTFLoader();
 })()
 
 function animate() {
-    if (config.characterAnim === 1) {
+    if (config.characterAnim === 1 && config.mobile === 0) {
         render();
         let delta = clock.getDelta();
         mixer.update(delta);
